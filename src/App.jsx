@@ -1,26 +1,24 @@
 import './App.scss'
 import Joblist from './components/Joblist'
+import Searchbar from './components/Searchbar/Searchbar'
 
+
+
+import { JobProvider } from './context/Jobcontext'
 
 
 
 function App() {
 
 
-  
-  
-
-
   return (
-    <div className="app__container">
-      <Joblist/>
-      
+    <JobProvider>
+      <div className="app__container">
+        <Searchbar/>
+        <Joblist/>
+      </div>
+    </JobProvider>
 
-    </div>
-
-    
-    
-  
   )
 }
 

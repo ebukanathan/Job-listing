@@ -1,7 +1,10 @@
 import "./Jobcard.scss"
 
+
 function Jobcard({position,logo,company,postedAt,contract,
-    featured,news,location,role,level,languages}) {
+    featured,news,location,role,level,languages,handleSubmit,handleInput}) {
+
+     
 
   return (
     <div>
@@ -35,11 +38,15 @@ function Jobcard({position,logo,company,postedAt,contract,
             </div>
             <div className="card__right">
                 <div className="job__categories">
-                    <button className="job__cat">{role}</button>
-                    <button  className="job__cat">{level}</button>
+            
+            <form onSubmit={handleSubmit}>
+
+                <button className="job__cat" value={role} onClick={handleInput}>{role}</button>
+                    <button  className="job__cat" value={level} onClick={handleInput}>{level}</button>
                     {languages.map((item)=>(
-                        <button  className="job__cat" key={item.key}>{item}</button>
+                        <button  className="job__cat" key={item.key}value={item} onClick={handleInput}>{item}</button>
                     ))}
+                </form>
                 </div>
             </div>
 
