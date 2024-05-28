@@ -1,25 +1,26 @@
-import './App.scss'
-import Joblist from './components/Joblist'
-import Searchbar from './components/Searchbar/Searchbar'
+import { useState } from "react";
+import "./App.scss";
+import Searchbar from "./components/Searchbar/Searchbar";
 
-
-
-import { JobProvider } from './context/Jobcontext'
-
-
+import Joblist from "./components/Joblist";
+import Pages from "./pages/Pages";
+//import Searchbar from "./components/Searchbar/Searchbar";
 
 function App() {
+  const [selected, setSelected] = useState([]);
 
+  function handleSelected(e, skill) {
+    e.preventDefault();
+    setSelected([...selected, skill]);
+    console.log(selected);
+  }
 
   return (
-    <JobProvider>
-      <div className="app__container">
-        <Searchbar/>
-        <Joblist/>
-      </div>
-    </JobProvider>
-
-  )
+    <div className="">
+      <Searchbar selected={selected} />
+      <Joblist handleSelected={handleSelected} />
+    </div>
+  );
 }
 
-export default App
+export default App;

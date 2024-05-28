@@ -1,11 +1,11 @@
-import React from 'react'
 
-function Searchcard(skills) {
+
+function Searchcard({skills}) {
 
 
   return (
     <div>
-        <button>{skills}</button>
+        <h4>{skills}</h4>
     </div>
   )
 }
