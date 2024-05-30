@@ -1,0 +1,19 @@
+.tab {
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: space-between;
+  margin-bottom: 2px;
+
+  button {
+    height: inherit;
+  }
+
+  .main__tab {
+    padding-left: 1px;
+    color: white;
+  }
+}

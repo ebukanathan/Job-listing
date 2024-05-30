@@ -3,9 +3,10 @@ import { useState, useContext } from "react";
 import "./Searchbar.scss";
 import { v4 as uuid } from "uuid";
 import Jobcard from "../jobcard/Jobcard";
+import Tab from "../Tab/Tab";
 //import  Searchcard  from './Searchcard'
 
-function Searchbar({ selected }) {
+function Searchbar({ selected, handleDelete }) {
   console.log(selected);
   //  const [search, setSearch] = useState();
 
@@ -40,22 +41,23 @@ function Searchbar({ selected }) {
   //   console.log(filteredArr);
 
   return (
-    <div className="">
-      {selected.map((item) => (
-        <Jobcard
-          key={item.id}
-          position={item.position}
-          logo={item.logo}
-          company={item.company}
-          postedAt={item.postedAt}
-          contract={item.contract}
-          featured={item.featured}
-          news={item.new}
-          location={item.location}
-          role={item.role}
-          level={item.level}
-          languages={item.languages}
-        />
+    <div className="searchbar">
+      {selected?.map((item) => (
+        // <Jobcard
+        //   key={item.id}
+        //   position={item.position}
+        //   logo={item.logo}
+        //   company={item.company}
+        //   postedAt={item.postedAt}
+        //   contract={item.contract}
+        //   featured={item.featured}
+        //   news={item.new}
+        //   location={item.location}
+        //   role={item.role}
+        //   level={item.level}
+        //   languages={item.languages}
+        // />
+        <Tab key={item.id} position={item} handleDelete={handleDelete} />
       ))}
     </div>
     //     <>

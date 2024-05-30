@@ -66,7 +66,7 @@ function Jobcard({
               >
                 {level}
               </button>
-              {languages.map((item) => (
+              {languages?.map((item) => (
                 <button
                   className="job__cat"
                   key={item}
