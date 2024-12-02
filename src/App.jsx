@@ -13,16 +13,7 @@ function App() {
 
   function handleSelected(e, skill) {
     e.preventDefault();
-    // setSelected([...selected, skill]);
-    // if (selected.length == 0) {
-    //   setSelected([...selected, skill]);
-    // } else if (selected.includes(skill)) {
-    //   setSelected([...selected, skill]);
-    // } else {
-    //   setSelected(...selected);
-    // }
 
-    // const ideo = selected.includes(skill) ? "i deooo" : "i no deooo";
     if (selected.length == 0) {
       return setSelected([...selected, skill]);
     } else if (selected.length > 0 && !selected.includes(skill)) {

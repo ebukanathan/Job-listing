@@ -8,12 +8,8 @@ function FilteredCard({ selected, handleSelected }) {
 
   console.log(selected);
 
-  //   const showLang = (c) => {
-  //     return c..map((lang) => (selected.includes(lang) ? lang : ""));
-  //   };
-
   const showSelected = () => {
-    data.map((c) => {
+    data.forEach((c) => {
       if (
         selected.includes(c.role) ||
         selected.includes(c.level) ||
@@ -24,6 +20,7 @@ function FilteredCard({ selected, handleSelected }) {
       console.log(filtered);
     });
   };
+
   useEffect(() => {
     showSelected();
   }, []);
